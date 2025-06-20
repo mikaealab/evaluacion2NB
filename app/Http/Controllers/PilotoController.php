@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Piloto; 
 
 class PilotoController extends Controller
 {
@@ -11,7 +12,8 @@ class PilotoController extends Controller
      */
     public function index()
     {
-        //
+        $pilotos = Piloto::all();
+        return view('pilotos.index', compact('pilotos'));
     }
 
     /**
